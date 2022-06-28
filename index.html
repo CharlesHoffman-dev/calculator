@@ -6,103 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator Project</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,bfbfbf+100 */
-            background: #ffffff;
-            /* Old browsers */
-            background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #bfbfbf 100%);
-            /* FF3.6-15 */
-            background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #bfbfbf 100%);
-            /* Chrome10-25,Safari5.1-6 */
-            background: radial-gradient(ellipse at center, #ffffff 0%, #bfbfbf 100%);
-            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#bfbfbf', GradientType=1);
-            /* IE6-9 fallback on horizontal gradient */
-        }
-
-        .calculator {
-            background-color: #353535;
-            width: 300px;
-            padding: 15px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 6px 0 #a1a1a1, 0 8px 10px rgba(0, 0, 0, 0.75)
-        }
-
-        .result {
-            background-color: #cecfac;
-            color: #3b3b32;
-            width: 90%;
-            margin: 8px 0 20px 10px;
-            text-align: right;
-            height: 50px;
-            line-height: 50px;
-            font-size: 36px;
-            padding-right: 10px;
-            overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), inset 0 2px 0 #a1a1a1;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-
-        }
-
-        ul li {
-            list-style: none;
-            background-color: #4e4e4e;
-            padding: 10px;
-            width: 15%;
-            float: left;
-            cursor: pointer;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            margin: 5px;
-            font-size: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 0 #a5a5a5;
-        }
-
-        ul li:active {
-            position: relative;
-            top: 5px;
-            box-shadow: 0 1px 0 #a5a5a5;
-        }
-
-        ul li:nth-child(16) {
-            height: 75px;
-            line-height: 75px;
-        }
-
-        ul li:nth-child(17) {
-            margin-top: -48px;
-            width: 65%;
-        }
-
-        .signature {
-            color: #fff;
-            font-size: 0.75rem;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: right;
-            position: relative;
-            top: 8px;
-            left: -5px;
-            z-index: -1;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -133,35 +37,7 @@
         </div>
     </div>
 
-    <script>
-
-        const $lis = document.querySelectorAll("ul li")
-        $lis.forEach((node) => {
-            node.addEventListener("mousedown", function(event) {
-                const value = node.innerText.trim()
-                const $result = document.querySelector(".result")
-                const resultText = $result.innerText.trim()
-
-                if(resultText == "0" || resultText == "Infinity" || resultText == "undefined") {
-                    $result.innerText = ""
-                }
-
-                if(value == "=") {
-                    let solution = eval(resultText)
-                    $result.innerText = solution
-                    return true
-                }
-
-                if(value.toLowerCase() == "c") {
-                    $result.innerText = "0"
-                    return true
-                }
-
-                $result.append(value)
-            })
-        })
-
-    </script>
+    <script src="main.js"></script>
 
 </body>
 
